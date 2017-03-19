@@ -45,7 +45,7 @@ bool binarySearchRecHelper(const Vector<int> &vec, int toFind, int start, int en
     int mid = (start + end)/2;          // should use start + (end - start)/2 to avoid overflow
 
     /* If the element at mid is the one we are looking for, success! */
-    if(vec[mid == toFind]) return true;
+    if(vec[mid] == toFind) return true;
 
     /* If element at mid is less than the one we are looking for, recurse on left
      * range, elese recurse o the right range
