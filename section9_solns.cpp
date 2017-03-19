@@ -456,7 +456,7 @@ int kthToLastRecHelper(Node *list, Node *&ret, int k) {
      * k-1 then this is the k-th last node. We can set the
      * out parameter to this node.
      */
-    int numInFront = kthToLastRecHelper(list, ret, k);
+    int numInFront = kthToLastRecHelper(list->next, ret, k);
     if(numInFront == k - 1) {
         ret = list;
     }
@@ -466,7 +466,7 @@ int kthToLastRecHelper(Node *list, Node *&ret, int k) {
 
 
 Node *kthToLastRec(Node *list, int k) {
-    Node *ret;
+    Node *ret = nullptr;
     (void) kthToLastRecHelper(list, ret, k);    // discard int return
     return ret;
 }
