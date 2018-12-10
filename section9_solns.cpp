@@ -630,6 +630,13 @@ TreeNode *flattenTree(TreeNode *root) {
 
     /* Connect current node to the right DLL */
     root->right = right;
+    
+    /* If the right list isn't empty, then we should set the left of
+     * the head of the right DLL to root.
+     */
+    if(right != nullptr) {
+        right->left = root;
+    }    
 
     /* Return head of new DLL */
     return head;
